@@ -96,18 +96,6 @@ with open('eda_summary_report.txt', 'w') as f:
 
 print("✓ EDA Summary report saved to 'eda_summary_report.txt'")
 print("\n" + "="*80)
-print("NEXT STEPS:")
-print("="*80)
-print("1. Review the column names and identify:")
-print("   - Race column (for filtering Black vs White)")
-print("   - Sex/Gender column (for filtering Women)")
-print("   - Recidivism target variable")
-print("   - Key features for analysis")
-print("\n2. Share the output with me so we can proceed with:")
-print("   - Filtering to Black & White women only")
-print("   - Comparative visualizations")
-print("   - Feature engineering")
-print("="*80)
 
 sns.set_style("whitegrid")
 plt.rcParams['figure.figsize'] = (14, 8)
@@ -372,20 +360,6 @@ print(f"✓ Filtered dataset saved: {len(df_filtered)} records")
 print(f"  - Black women: {len(df_filtered[df_filtered['race']=='African-American'])}")
 print(f"  - White women: {len(df_filtered[df_filtered['race']=='Caucasian'])}")
 
-print("\n" + "="*80)
-print("PHASE 2 COMPLETE!")
-print("="*80)
-print("\nKey Findings:")
-print("✓ Demographic profiles compared")
-print("✓ Recidivism rates analyzed by race")
-print("✓ Statistical significance tested")
-print("✓ Potential bias in COMPAS scores identified")
-print("\nNext Steps:")
-print("→ Feature Engineering & PCA")
-print("→ Logistic Regression Modeling")
-print("→ Kaplan-Meier Survival Analysis")
-print("="*80)
-
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.decomposition import PCA
 from sklearn.model_selection import train_test_split
@@ -401,7 +375,7 @@ plt.rcParams['figure.figsize'] = (14, 8)
 COLORS = {'African-American': '#E74C3C', 'Caucasian': '#3498DB'}
 
 print("="*80)
-print("PHASE 3: FEATURE ENGINEERING, PCA & PREDICTIVE MODELING")
+print("FEATURE ENGINEERING, PCA & PREDICTIVE MODELING")
 print("="*80)
 
 # Load filtered data
@@ -444,8 +418,6 @@ df_model['is_old'] = (df_model['age'] > 45).astype(int)
 # High risk indicator
 df_model['high_risk'] = (df_model['score_text'] == 'High').astype(int)
 
-print("✓ Categorical variables encoded")
-print("✓ Interaction features created")
 print(f"✓ Total features now: {len(df_model.columns)}")
 
 # Select features for modeling
@@ -726,24 +698,14 @@ plt.tight_layout()
 plt.savefig('10_confusion_matrices.png', dpi=300, bbox_inches='tight')
 plt.show()
 
-print("\n" + "="*80)
-print("7. SAVING RESULTS")
-print("="*80)
-
 # Save feature importance
 feature_importance.to_csv('feature_importance_lr.csv', index=False)
 rf_importance.to_csv('feature_importance_rf.csv', index=False)
 
-print("✓ Feature importance saved")
-print("✓ All visualizations generated")
-
-print("\n" + "="*80)
-print("PHASE 3 COMPLETE!")
 print("="*80)
 print(f"\nModel Performance Summary:")
 print(f"  Logistic Regression AUC: {roc_auc_lr:.3f}")
 print(f"  Random Forest AUC: {roc_auc_rf:.3f}")
-print(f"\nNext Step: Kaplan-Meier Survival Analysis (Phase 4)")
 print("="*80)
 
 pip install lifelines
@@ -758,7 +720,7 @@ plt.rcParams['figure.figsize'] = (14, 8)
 COLORS = {'Black': '#E74C3C', 'White': '#3498DB'}
 
 print("="*80)
-print("PHASE 4: KAPLAN-MEIER SURVIVAL ANALYSIS")
+print("KAPLAN-MEIER SURVIVAL ANALYSIS")
 print("Time-to-Recidivism Analysis for Black vs White Women")
 print("="*80)
 
