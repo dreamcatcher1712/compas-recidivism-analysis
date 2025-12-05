@@ -11,7 +11,7 @@ Analyzing racial bias in algorithmic risk assessment for Black vs White women.
 See `/visualizations` for all charts.
 
 ## Tech Stack
-Software/Environments: Jupyter Notebooks, Google Colab
-Languages: Python
-Libraries: NumPy, Pandas, scikit, matplotlib, Seaborn
-Skills/Techniques: Exploratory Data Analysis (EDA), logistic regression, survival testing (Cox Proportional Hazards, Kaplan-Meier), statistical modeling, data visualization
+- Software/Environments: Jupyter Notebooks, Google Colab
+- Languages: Python
+- Libraries: NumPy, Pandas, scikit, matplotlib, Seaborn
+- Skills/Techniques: Exploratory Data Analysis (EDA), logistic regression, survival testing (Cox Proportional Hazards, Kaplan-Meier), statistical modeling, data visualization
